@@ -1,10 +1,6 @@
 import java.awt.*;
 import java.awt.event.*;
-import java.net.MalformedURLException;
-import java.net.URL;
-
 import javax.swing.*;
-import java.awt.event.*;
 
 public class Quiz_Interface extends JPanel{
 	JLabel lbBG,lbLogo,lbBt,lbPontos,lbRodadas,lbOp;
@@ -23,7 +19,7 @@ public class Quiz_Interface extends JPanel{
 	public void init() {
 		//img
 		imgBG = new ImageIcon("C:\\Images_croniquiz\\BG.png");
-		imgLogo = new ImageIcon("C:\\Users\\kauac\\Downloads\\Ceap\\Cronica\\Images\\Logo.png");
+		imgLogo = new ImageIcon("C:\\Images_croniquiz\\Logo.png");
 		imgBt = new ImageIcon("C:\\Users\\kauac\\Downloads\\Ceap\\Cronica\\Images\\Button.png");
 		imgPontos = new ImageIcon("C:\\Users\\kauac\\Downloads\\Ceap\\Cronica\\Images\\Pontos.png");
 		imgRodada = new ImageIcon("C:\\Users\\kauac\\Downloads\\Ceap\\Cronica\\Images\\Rodada.png");

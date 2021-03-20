@@ -20,7 +20,7 @@ public class Quiz_Interface extends JPanel{
 		//img
 		imgBG = new ImageIcon("C:\\Images_croniquiz\\BG.png");
 		imgLogo = new ImageIcon("C:\\Images_croniquiz\\Logo.png");
-		imgBt = new ImageIcon("C:\\Users\\kauac\\Downloads\\Ceap\\Cronica\\Images\\Button.png");
+		imgBt = new ImageIcon("C:\\Images_croniquiz\\Button.png");
 		imgPontos = new ImageIcon("C:\\Users\\kauac\\Downloads\\Ceap\\Cronica\\Images\\Pontos.png");
 		imgRodada = new ImageIcon("C:\\Users\\kauac\\Downloads\\Ceap\\Cronica\\Images\\Rodada.png");
 		imgOp = new ImageIcon("C:\\Users\\kauac\\Downloads\\Ceap\\Cronica\\Images\\Options.png");

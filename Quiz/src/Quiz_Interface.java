@@ -74,7 +74,8 @@ public class Quiz_Interface extends JPanel{
         bt1.setContentAreaFilled(false);
         bt1.setBorderPainted(false);
 		//lb
-		add(lbOp);
+        
+        add(lbOp);		
 		// - Perguntas do Quiz em imagens
 		//add(lbQuest);
 		add(lbQ1);

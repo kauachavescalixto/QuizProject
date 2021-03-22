@@ -3,9 +3,9 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class Quiz_Interface extends JPanel{
-	JLabel lbBG,lbLogo,lbBt,lbPontos,lbRodadas,lbOp;
+	JLabel lbBG,lbLogo,lbBt,lbPontos,lbRodadas,lbOp,lbInicial,lbFinal;
 	JLabel lbQuest,lbQ1,lbQ2,lbQ3,lbQ4,lbQ5;
-	ImageIcon imgBG,imgLogo,imgBt,imgPontos,imgRodada,imgOp;
+	ImageIcon imgBG,imgLogo,imgBt,imgPontos,imgRodada,imgOp,imgFinal,imgInicial;
 	ImageIcon imgQuest,imgQ1,imgQ2,imgQ3,imgQ4,imgQ5;
 	JButton bt1;
 	
@@ -21,16 +21,18 @@ public class Quiz_Interface extends JPanel{
 		imgBG = new ImageIcon("C:\\Images_croniquiz\\BG.png");
 		imgLogo = new ImageIcon("C:\\Images_croniquiz\\Logo.png");
 		imgBt = new ImageIcon("C:\\Images_croniquiz\\Button.png");
-		imgPontos = new ImageIcon("C:\\Users\\kauac\\Downloads\\Ceap\\Cronica\\Images\\Pontos.png");
+		imgPontos = new ImageIcon("C:\\Images_croniquiz\\Pontos.png");
 		imgRodada = new ImageIcon("C:\\Images_croniquiz\\Rodada.png");
 		imgOp = new ImageIcon("C:\\Images_croniquiz\\Options.png");
+		imgInicial = new ImageIcon("");
+		imgFinal = new ImageIcon("");
 		//Questions
-		imgQuest = new ImageIcon("C:\\Users\\kauac\\Downloads\\Ceap\\Cronica\\Images\\Question.png");
-		imgQ1 = new ImageIcon("C:\\Users\\kauac\\Downloads\\Ceap\\Cronica\\Images\\Quest1.png");
-		imgQ2 = new ImageIcon("C:\\Users\\kauac\\Downloads\\Ceap\\Cronica\\Images\\Quest2.png");
-		imgQ3 = new ImageIcon("C:\\Users\\kauac\\Downloads\\Ceap\\Cronica\\Images\\Quest3.png");
-		imgQ4 = new ImageIcon("C:\\Users\\kauac\\Downloads\\Ceap\\Cronica\\Images\\Quest4.png");
-		imgQ5 = new ImageIcon("C:\\Users\\kauac\\Downloads\\Ceap\\Cronica\\Images\\Quest5.png");
+		imgQuest = new ImageIcon("C:\\Images_croniquiz\\Question.png");
+		imgQ1 = new ImageIcon("C:\\Images_croniquiz\\Quest1.png");
+		imgQ2 = new ImageIcon("C:\\Images_croniquiz\\Quest2.png");
+		imgQ3 = new ImageIcon("C:\\Images_croniquiz\\Quest3.png");
+		imgQ4 = new ImageIcon("C:\\Images_croniquiz\\Quest4.png");
+		imgQ5 = new ImageIcon("C:\\Images_croniquiz\\Quest5.png");
 		//lb
 		lbBG = new JLabel(imgBG);
 		lbLogo = new JLabel(imgLogo);
@@ -38,6 +40,8 @@ public class Quiz_Interface extends JPanel{
 		lbRodadas = new JLabel(imgRodada);
 		lbBt = new JLabel(imgBt);
 		lbOp = new JLabel(imgOp);
+		lbInicial = new JLabel(imgInicial);
+		lbFinal = new JLabel(imgFinal);
 		//Questions
 		lbQuest = new JLabel(imgQuest);
 		lbQ1 = new JLabel(imgQ1);
@@ -56,6 +60,8 @@ public class Quiz_Interface extends JPanel{
 		lbRodadas.setBounds(0,0,360,640);
 		lbBt.setBounds(0,0,360,640);
 		lbOp.setBounds(0,0,360,640);
+		lbInicial.setBounds(0,0,360,640);
+		lbFinal.setBounds(0,0,360,640);
 		//Questions
 		lbQuest.setBounds(0,0,360,640);
 		lbQ1.setBounds(0,0,360,640);
@@ -94,15 +100,17 @@ public class Quiz_Interface extends JPanel{
 		add(lbPontos);
 		add(lbRodadas);
 		add(lbBG);
+		add(lbInicial);
+		add(lbFinal);
 		
 	}
-	public void def_eventos() {
-		//lb
+	public void def_eventos() {			
+		//bt1
+		bt1.addActionListener(new ActionListener(){	
+			public void actionPerformed(ActionEvent arg0) {
 
-		//img
-				
-		//bt
-		
+			}
+		});
 	}
 	
 	public static void main (String args[]){
@@ -111,6 +119,7 @@ public class Quiz_Interface extends JPanel{
 		frameReferencia.getContentPane().add(new Quiz_Interface());
 		frameReferencia.setVisible(true);
 		frameReferencia.setBounds(450,100,375,675);
+		frameReferencia.setIconImage(Toolkit.getDefaultToolkit().getImage(""));
 		
 		
 	}

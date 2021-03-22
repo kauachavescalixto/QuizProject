@@ -5,10 +5,14 @@ import javax.swing.*;
 public class Quiz_Interface extends JPanel{
 	JLabel lbBG,lbLogo,lbBt,lbPontos,lbRodadas,lbOp,lbInicial,lbFinal;
 	JLabel lbQuest,lbQ1,lbQ2,lbQ3,lbQ4,lbQ5;
+	JLabel lbpontos, lbrodada; 
 	ImageIcon imgBG,imgLogo,imgBt,imgPontos,imgRodada,imgOp,imgFinal,imgInicial;
 	ImageIcon imgQuest,imgQ1,imgQ2,imgQ3,imgQ4,imgQ5;
 	JButton bt1;
-	
+	JRadioButton rb1,rb2,rb3,rb4,rb5;
+	ButtonGroup btGroup;
+	int pontos = 0;
+	int rodada = 0;
 	public Quiz_Interface(){
 		init();
 		initAdd();
@@ -22,7 +26,7 @@ public class Quiz_Interface extends JPanel{
 		imgBt = new ImageIcon("C:\\Images_croniquiz\\Button.png");
 		imgPontos = new ImageIcon("C:\\Images_croniquiz\\Pontos.png");
 		imgRodada = new ImageIcon("C:\\Images_croniquiz\\Rodada.png");
-		imgOp = new ImageIcon("C:\\Images_croniquiz\\Options.png");
+		//imgOp = new ImageIcon("C:\\Images_croniquiz\\Options.png");
 		imgInicial = new ImageIcon("CroniquizInicial");
 		imgFinal = new ImageIcon("CronicalFinal");
 		//Questions
@@ -41,6 +45,8 @@ public class Quiz_Interface extends JPanel{
 		lbOp = new JLabel(imgOp);
 		lbInicial = new JLabel(imgInicial);
 		lbFinal = new JLabel(imgFinal);
+		lbpontos = new JLabel("Pontuação: "+ pontos);
+		lbrodada = new JLabel("Rodada: " + rodada);
 		//Questions
 		lbQuest = new JLabel(imgQuest);
 		lbQ1 = new JLabel(imgQ1);
@@ -50,7 +56,17 @@ public class Quiz_Interface extends JPanel{
 		lbQ5 = new JLabel(imgQ5);
 		//bt
 		bt1 = new JButton();
+		
+		//kaio nossa putinha//
 		//
+		
+		//CheckBox
+		rb1 = new JRadioButton("1 - arroz e feijão");
+		rb2 = new JRadioButton("2 - arros e feijão");
+		rb3 = new JRadioButton("3 - arroz e feijo");
+		rb4 = new JRadioButton("4 - arroz e gejão");
+		rb5 = new JRadioButton("5 - aroz e feijão");
+		
 		initBounds(lbBG,lbPontos,lbRodadas,lbBt,lbOp,lbInicial,lbFinal,lbQuest,lbQ1,lbQ2,lbQ3,lbQ4,lbQ5,lbLogo);
 	}
 	
@@ -62,10 +78,54 @@ public class Quiz_Interface extends JPanel{
         bt1.setContentAreaFilled(false);
         bt1.setBorderPainted(false);
 		//lb
-        
+        add(lbpontos);
+        add(lbrodada);
+        lbrodada.setFont((new Font("arial", Font.CENTER_BASELINE, 12)));
+        lbrodada.setBounds(160, 19, 80, 20);
+        lbrodada.setForeground(Color.white);
+        lbpontos.setFont((new Font("arial", Font.CENTER_BASELINE, 12)));
+        lbpontos.setBounds(140, 597, 80, 20);
+        lbpontos.setForeground(Color.white);
         add(lbOp);		
-		// - Perguntas do Quiz em imagens
-		//add(lbQuest);
+		// -Alternativas do Quiz - botões e checkbox
+   
+        add(rb1);
+        add(rb2);
+        add(rb3);
+        add(rb4);
+        add(rb5);
+		
+        rb1.setBounds(20, 309, 322, 42);
+        rb1.setBackground(new Color(29,7,57));
+        rb1.setForeground(Color.white);
+       
+        rb2.setBounds(20, 359, 322, 42);
+        rb2.setBackground(new Color(29,7,57));
+        rb2.setForeground(Color.white);
+        
+        rb3.setBounds(20, 409, 322, 42);
+        rb3.setBackground(new Color(29,7,57));
+        rb3.setForeground(Color.white);
+        
+        rb4.setBounds(20, 459, 322, 42);
+        rb4.setBackground(new Color(29,7,57));
+        rb4.setForeground(Color.white);
+        
+        rb5.setBounds(20, 509, 322, 42);
+        rb5.setBackground(new Color(29,7,57));
+        rb5.setForeground(Color.white);
+        
+        btGroup = new ButtonGroup();
+		btGroup.add(rb1);
+		btGroup.add(rb2);
+		btGroup.add(rb3);
+		btGroup.add(rb4);
+		btGroup.add(rb5);
+        
+        // - Perguntas do Quiz em imagens
+        //add(lbQuest);
+        
+		
 		add(lbQ1);
 		add(lbQ2);
 		add(lbQ3);

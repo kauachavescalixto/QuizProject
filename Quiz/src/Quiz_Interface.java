@@ -11,7 +11,6 @@ public class Quiz_Interface extends JPanel{
 	
 	public Quiz_Interface(){
 		init();
-		initBounds();
 		initAdd();
 		def_eventos();
 	}
@@ -24,8 +23,8 @@ public class Quiz_Interface extends JPanel{
 		imgPontos = new ImageIcon("C:\\Images_croniquiz\\Pontos.png");
 		imgRodada = new ImageIcon("C:\\Images_croniquiz\\Rodada.png");
 		imgOp = new ImageIcon("C:\\Images_croniquiz\\Options.png");
-		imgInicial = new ImageIcon("");
-		imgFinal = new ImageIcon("");
+		imgInicial = new ImageIcon("CroniquizInicial");
+		imgFinal = new ImageIcon("CronicalFinal");
 		//Questions
 		imgQuest = new ImageIcon("C:\\Images_croniquiz\\Question.png");
 		imgQ1 = new ImageIcon("C:\\Images_croniquiz\\Quest1.png");
@@ -51,27 +50,10 @@ public class Quiz_Interface extends JPanel{
 		lbQ5 = new JLabel(imgQ5);
 		//bt
 		bt1 = new JButton();
+		//
+		initBounds(lbBG,lbPontos,lbRodadas,lbBt,lbOp,lbInicial,lbFinal,lbQuest,lbQ1,lbQ2,lbQ3,lbQ4,lbQ5,lbLogo);
 	}
-	public void initBounds() {
-		//lb
-		lbBG.setBounds(0,0,360,640);
-		lbLogo.setBounds(0,0,360,640);
-		lbPontos.setBounds(0,0,360,640);
-		lbRodadas.setBounds(0,0,360,640);
-		lbBt.setBounds(0,0,360,640);
-		lbOp.setBounds(0,0,360,640);
-		lbInicial.setBounds(0,0,360,640);
-		lbFinal.setBounds(0,0,360,640);
-		//Questions
-		lbQuest.setBounds(0,0,360,640);
-		lbQ1.setBounds(0,0,360,640);
-		lbQ2.setBounds(0,0,360,640);
-		lbQ3.setBounds(0,0,360,640);
-		lbQ4.setBounds(0,0,360,640);
-		lbQ5.setBounds(0,0,360,640);
-		//bt
-		bt1.setBounds(300,575,50,50);
-	}
+	
 	public void initAdd() {
 		setLayout(null);
 		//bt
@@ -113,13 +95,19 @@ public class Quiz_Interface extends JPanel{
 		});
 	}
 	
+	public static void initBounds(JLabel a, JLabel b,JLabel c,JLabel d,JLabel e,JLabel f,JLabel g,JLabel h,JLabel i,JLabel j,JLabel k,JLabel l,JLabel m,JLabel n) {
+		JLabel[] vetorJLabel = new JLabel[]{a,b,c,d,e,f,g,h,i,j,k,l,m,n};
+		for(JLabel a2: vetorJLabel) {
+			a2.setBounds(0,0,360,640);
+			}
+		}
 	public static void main (String args[]){
-		JFrame frameReferencia = new JFrame("Frame Ref");
+		JFrame frameReferencia = new JFrame("Croniquiz");
 		frameReferencia.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frameReferencia.getContentPane().add(new Quiz_Interface());
 		frameReferencia.setVisible(true);
 		frameReferencia.setBounds(450,100,375,675);
-		frameReferencia.setIconImage(Toolkit.getDefaultToolkit().getImage(""));
+		frameReferencia.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Images_croniquiz\\LogoNB.png"));
 		
 		
 	}

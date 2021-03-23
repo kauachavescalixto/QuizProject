@@ -11,31 +11,36 @@ public class Quiz_Interface extends JPanel{
 	JButton bt1;
 	JRadioButton rb1,rb2,rb3,rb4,rb5;
 	ButtonGroup btGroup;
+	
 	int pontos = 0;
 	int rodada = 0;
+	
 	public Quiz_Interface(){
+		import_imgs();
 		init();
 		initAdd();
 		def_eventos();
 	}
-	
-	public void init() {
+
+	public void import_imgs() {
 		//img
-		imgBG = new ImageIcon("C:\\Images_croniquiz\\BG.png");
-		imgLogo = new ImageIcon("C:\\Images_croniquiz\\Logo.png");
-		imgBt = new ImageIcon("C:\\Images_croniquiz\\Button.png");
-		imgPontos = new ImageIcon("C:\\Images_croniquiz\\Pontos.png");
-		imgRodada = new ImageIcon("C:\\Images_croniquiz\\Rodada.png");
-		//imgOp = new ImageIcon("C:\\Images_croniquiz\\Options.png");
-		imgInicial = new ImageIcon("CroniquizInicial");
-		imgFinal = new ImageIcon("CronicalFinal");
-		//Questions
-		imgQuest = new ImageIcon("C:\\Images_croniquiz\\Question.png");
-		imgQ1 = new ImageIcon("C:\\Images_croniquiz\\Quest1.png");
-		imgQ2 = new ImageIcon("C:\\Images_croniquiz\\Quest2.png");
-		imgQ3 = new ImageIcon("C:\\Images_croniquiz\\Quest3.png");
-		imgQ4 = new ImageIcon("C:\\Images_croniquiz\\Quest4.png");
-		imgQ5 = new ImageIcon("C:\\Images_croniquiz\\Quest5.png");
+			imgBG = new ImageIcon("C:\\Images_croniquiz\\BG.png");
+			imgLogo = new ImageIcon("C:\\Images_croniquiz\\Logo.png");
+			imgBt = new ImageIcon("C:\\Images_croniquiz\\Button.png");
+			imgPontos = new ImageIcon("C:\\Images_croniquiz\\Pontos.png");
+			imgRodada = new ImageIcon("C:\\Images_croniquiz\\Rodada.png");
+			//imgOp = new ImageIcon("C:\\Images_croniquiz\\Options.png");
+			imgInicial = new ImageIcon("C:\\Images_croniquiz\\CroniquizInicial.png");
+			imgFinal = new ImageIcon("C:\\Images_croniquiz\\CroniquizFinal.png");
+			//Questions
+			imgQuest = new ImageIcon("C:\\Images_croniquiz\\Question.png");
+			imgQ1 = new ImageIcon("C:\\Images_croniquiz\\Quest1.png");
+			imgQ2 = new ImageIcon("C:\\Images_croniquiz\\Quest2.png");
+			imgQ3 = new ImageIcon("C:\\Images_croniquiz\\Quest3.png");
+			imgQ4 = new ImageIcon("C:\\Images_croniquiz\\Quest4.png");
+			imgQ5 = new ImageIcon("C:\\Images_croniquiz\\Quest5.png");
+	}	
+	public void init() {
 		//lb
 		lbBG = new JLabel(imgBG);
 		lbLogo = new JLabel(imgLogo);
@@ -45,8 +50,8 @@ public class Quiz_Interface extends JPanel{
 		lbOp = new JLabel(imgOp);
 		lbInicial = new JLabel(imgInicial);
 		lbFinal = new JLabel(imgFinal);
-		lbpontos = new JLabel("Pontuação: "+ pontos);
-		lbrodada = new JLabel("Rodada: " + rodada);
+		lbpontos = new JLabel();
+		lbrodada = new JLabel();
 		//Questions
 		lbQuest = new JLabel(imgQuest);
 		lbQ1 = new JLabel(imgQ1);
@@ -57,34 +62,38 @@ public class Quiz_Interface extends JPanel{
 		//bt
 		bt1 = new JButton();
 		
-		//kaio nossa putinha//
-		//
-		
 		//CheckBox
-		rb1 = new JRadioButton("1 - arroz e feijão");
-		rb2 = new JRadioButton("2 - arros e feijão");
-		rb3 = new JRadioButton("3 - arroz e feijo");
-		rb4 = new JRadioButton("4 - arroz e gejão");
-		rb5 = new JRadioButton("5 - aroz e feijão");
+		rb1 = new JRadioButton("");
+		rb2 = new JRadioButton("");
+		rb3 = new JRadioButton("");
+		rb4 = new JRadioButton("");
+		rb5 = new JRadioButton("");
 		
 		initBounds(lbBG,lbPontos,lbRodadas,lbBt,lbOp,lbInicial,lbFinal,lbQuest,lbQ1,lbQ2,lbQ3,lbQ4,lbQ5,lbLogo);
-	}
-	
+	} 
 	public void initAdd() {
 		setLayout(null);
+		
 		//bt
+		add(lbpontos);
 		add(bt1);
 		bt1.setOpaque(true);
+		bt1.setBounds(154,513,50,50);
         bt1.setContentAreaFilled(false);
         bt1.setBorderPainted(false);
+        
+        add(lbInicial);
+        lbFinal.setVisible(false);
+		add(lbFinal);
+		
 		//lb
-        add(lbpontos);
+        
         add(lbrodada);
-        lbrodada.setFont((new Font("arial", Font.CENTER_BASELINE, 12)));
-        lbrodada.setBounds(160, 19, 80, 20);
+        lbrodada.setFont((new Font("arial", Font.CENTER_BASELINE, 24)));
+        lbrodada.setBounds(173, 17, 80, 20);
         lbrodada.setForeground(Color.white);
-        lbpontos.setFont((new Font("arial", Font.CENTER_BASELINE, 12)));
-        lbpontos.setBounds(140, 597, 80, 20);
+        lbpontos.setFont((new Font("arial", Font.CENTER_BASELINE, 30)));
+        lbpontos.setBounds(153, 597, 80, 20);
         lbpontos.setForeground(Color.white);
         add(lbOp);		
 		// -Alternativas do Quiz - botões e checkbox
@@ -94,26 +103,17 @@ public class Quiz_Interface extends JPanel{
         add(rb3);
         add(rb4);
         add(rb5);
-		
+        JRadioButton[] vetorderb = new JRadioButton[] {rb1,rb2,rb3,rb4,rb5};
+		for(JRadioButton a:vetorderb) {
+			a.setBackground(new Color(29,7,57));
+	        a.setForeground(Color.white);
+		}
         rb1.setBounds(20, 309, 322, 42);
-        rb1.setBackground(new Color(29,7,57));
-        rb1.setForeground(Color.white);
-       
         rb2.setBounds(20, 359, 322, 42);
-        rb2.setBackground(new Color(29,7,57));
-        rb2.setForeground(Color.white);
-        
         rb3.setBounds(20, 409, 322, 42);
-        rb3.setBackground(new Color(29,7,57));
-        rb3.setForeground(Color.white);
-        
         rb4.setBounds(20, 459, 322, 42);
-        rb4.setBackground(new Color(29,7,57));
-        rb4.setForeground(Color.white);
-        
         rb5.setBounds(20, 509, 322, 42);
-        rb5.setBackground(new Color(29,7,57));
-        rb5.setForeground(Color.white);
+        
         
         btGroup = new ButtonGroup();
 		btGroup.add(rb1);
@@ -124,7 +124,6 @@ public class Quiz_Interface extends JPanel{
         
         // - Perguntas do Quiz em imagens
         //add(lbQuest);
-        
 		
 		add(lbQ1);
 		add(lbQ2);
@@ -132,29 +131,111 @@ public class Quiz_Interface extends JPanel{
 		add(lbQ4);
 		add(lbQ5);
 		lbQ1.setVisible(true);
-		lbQ2.setVisible(false);
-		lbQ3.setVisible(false);
-		lbQ4.setVisible(false);
-		lbQ5.setVisible(false);
+		lbQ2.setVisible(true);
+		lbQ3.setVisible(true);
+		lbQ4.setVisible(true);
+		lbQ5.setVisible(true);
+
 		//
 		add(lbBt);
 		add(lbLogo);
 		add(lbPontos);
 		add(lbRodadas);
 		add(lbBG);
-		add(lbInicial);
-		add(lbFinal);
+		
+		
 		
 	}
-	public void def_eventos() {			
-		//bt1
+	public void def_eventos() {
+		String[] Layer1 = new String[] {"","Rodada1","Rod2","rod3","rod4","rod5"};
+		String[] Layer2 = new String[] {};
+		String[] Layer3 = new String[] {};
+		String[] Layer4 = new String[] {};
+		String[] Layer5 = new String[] {};
+		
+		//vetor supremo::::
+		
+		int[] respostas_certas = new int[]{0,1,2,3,4};
+		
+		//respostas certas//
+		JRadioButton[] vetorderb = new JRadioButton[] {rb1,rb2,rb3,rb4,rb5};	
+		for(JRadioButton a:vetorderb){a.setVisible(false);};
 		bt1.addActionListener(new ActionListener(){	
-			public void actionPerformed(ActionEvent arg0) {
-
+			public void actionPerformed(ActionEvent arg0) {	
+				rodada++;
+				rb1.setText(Layer1[rodada]);
+				rb2.setText(Layer1[rodada]);
+				rb3.setText(Layer1[rodada]);
+				rb4.setText(Layer1[rodada]);
+				rb5.setText(Layer1[rodada]);
+				
+				for(JRadioButton a:vetorderb) {
+					a.setEnabled(true);
+				}
+				for(JRadioButton a:vetorderb) {
+					a.setBackground(new Color(29,7,57));
+				}
+				if(pontos==0) {
+					lbpontos.setText("");
+				}else {
+					lbpontos.setText(""+pontos);
+				}
+				lbrodada.setText(""+(rodada));
+				switch (rodada) {
+				case 1:lbInicial.setVisible(false);for(JRadioButton a:vetorderb){a.setVisible(true);};bt1.setBounds(300,580,50,50);break;
+				case 2:lbQ1.setVisible(false);break;
+				case 3:lbQ2.setVisible(false);break;
+				case 4:lbQ3.setVisible(false);break;
+				case 5:lbQ4.setVisible(false);break;
+				case 6:lbQ5.setVisible(false);lbFinal.setVisible(true);for(JRadioButton a:vetorderb){a.setVisible(false);};lbpontos.setBounds(115,432,400,75);lbpontos.setFont(new Font("arial", Font.BOLD,80));break;
+				case 7:System.exit(0);
+				}
 			}
 		});
+		for(JRadioButton a:vetorderb) {
+			a.addActionListener(new ActionListener(){	
+				public void actionPerformed(ActionEvent arg0) {
+					int valorB = -1;
+					if(rb1.isSelected()) {
+						valorB=0;
+					}if(rb2.isSelected()) {
+						valorB=1;
+					}if(rb3.isSelected()) {
+						valorB=2;
+					}if(rb4.isSelected()) {
+						valorB=3;
+					}if(rb5.isSelected()) {
+						valorB=4;
+					}
+					for(JRadioButton a:vetorderb) {
+						a.setEnabled(false);
+					}
+					Auto_vermelho();
+					Auto_cores(respostas_certas[rodada-1],valorB);
+				}
+			});
+		}
+		
 	}
-	
+	public void Auto_vermelho() {
+		rb1.setBackground(new Color(201,54,58));
+		rb2.setBackground(new Color(201,54,58));
+		rb3.setBackground(new Color(201,54,58));
+		rb4.setBackground(new Color(201,54,58));
+		rb5.setBackground(new Color(201,54,58));
+	}
+	public void Auto_cores(int resp_certa,int selected) {
+		switch (resp_certa) {
+		case 0:rb1.setBackground(new Color(47,39,136));break;
+		case 1:rb2.setBackground(new Color(47,39,136));break;
+		case 2:rb3.setBackground(new Color(47,39,136));break;
+		case 3:rb4.setBackground(new Color(47,39,136));break;
+		case 4:rb5.setBackground(new Color(47,39,136));break;
+		}
+		if(resp_certa==selected) {
+			pontos+=100;
+		}
+	}
 	public static void initBounds(JLabel a, JLabel b,JLabel c,JLabel d,JLabel e,JLabel f,JLabel g,JLabel h,JLabel i,JLabel j,JLabel k,JLabel l,JLabel m,JLabel n) {
 		JLabel[] vetorJLabel = new JLabel[]{a,b,c,d,e,f,g,h,i,j,k,l,m,n};
 		for(JLabel a2: vetorJLabel) {

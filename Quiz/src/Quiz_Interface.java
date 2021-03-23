@@ -147,15 +147,35 @@ public class Quiz_Interface extends JPanel{
 		
 	}
 	public void def_eventos() {
-		String[] Layer1 = new String[] {"","Rodada1","Rod2","rod3","rod4","rod5"};
-		String[] Layer2 = new String[] {};
-		String[] Layer3 = new String[] {};
-		String[] Layer4 = new String[] {};
-		String[] Layer5 = new String[] {};
+		String[] Layer1 = new String[] {"","Provar para a igreja que a terra não é plana",
+				"Deodoro da Fonseca",
+				"Peregrino Santo",
+				"Fuzileiros navais, João Candido",
+				"Direito ao voto feminino e voto secreto; direitos trabalhistas; industrialização brasileira",""};
+		String[] Layer2 = new String[] {"","Uma rota diferente para comércio de escravos",
+				"Prudente de Moraes",
+				"Indígenas locais",
+				"Escravos recém libertos, Zumbi dos Palmares",
+				"Abolição dos direitos trabalhistas; Ditadura do estado novo; políticas contra imigrantes",""};
+		String[] Layer3 = new String[] {"","Buscar novos escravos",
+				"Deodoro Peixoto",
+				"Machado de Assis",
+				"Índios escravizados, líder Yanomami Davi Kopenawa",
+				"Fim do voto secreto; privatização de empresas estatais; criação de direitos trabalhistas",""};
+		String[] Layer4 = new String[] {"","Ajudar os Espanhóis no combate aos índios",
+				"Washington Luís",
+				"Lampião e Maria Bonita",
+				"Exército brasileiro, Marechal Deodoro da Fonseca",
+				"Controle de revoltas comunistas; plano real; industrialização do Brasil",""};
+		String[] Layer5 = new String[] {"","Buscar uma nova rota comercial às índias orientais",
+				"Floriano Peixoto",
+				"Fazendeiros que queriam isenção de impostos",
+				"Produtores de café, Getúlio Vargas",
+				"Implantação das repúblicas oligárquicas; direitos trabalhistas; direito ao voto feminino",""};
 		
 		//vetor supremo::::
 		
-		int[] respostas_certas = new int[]{0,1,2,3,4};
+		int[] respostas_certas = new int[]{4,1,0,0,0};
 		
 		//respostas certas//
 		JRadioButton[] vetorderb = new JRadioButton[] {rb1,rb2,rb3,rb4,rb5};	
@@ -163,11 +183,14 @@ public class Quiz_Interface extends JPanel{
 		bt1.addActionListener(new ActionListener(){	
 			public void actionPerformed(ActionEvent arg0) {	
 				rodada++;
-				rb1.setText(Layer1[rodada]);
-				rb2.setText(Layer1[rodada]);
-				rb3.setText(Layer1[rodada]);
-				rb4.setText(Layer1[rodada]);
-				rb5.setText(Layer1[rodada]);
+				if(rodada<5) {
+					rb1.setText(Layer1[rodada]);
+					rb2.setText(Layer2[rodada]);
+					rb3.setText(Layer3[rodada]);
+					rb4.setText(Layer4[rodada]);
+					rb5.setText(Layer5[rodada]);
+				}
+				
 				
 				for(JRadioButton a:vetorderb) {
 					a.setEnabled(true);

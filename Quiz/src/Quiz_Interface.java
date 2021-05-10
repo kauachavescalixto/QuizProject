@@ -6,7 +6,6 @@ public class Quiz_Interface extends JPanel{
 	JLabel lbBG,lbLogo,lbBt,lbPontos,lbRodadas,lbOp,lbInicial,lbFinal;
 	JLabel lbQuest,lbQ1,lbQ2,lbQ3,lbQ4,lbQ5;
 	JLabel lbpontos, lbrodada; 
-	ImageIcon imgBG,imgLogo,imgBt,imgPontos,imgRodada,imgOp,imgFinal,imgInicial;
 	ImageIcon imgQuest,imgQ1,imgQ2,imgQ3,imgQ4,imgQ5;
 	JButton bt1;
 	JRadioButton rb1,rb2,rb3,rb4,rb5;
@@ -16,49 +15,30 @@ public class Quiz_Interface extends JPanel{
 	int rodada = 0;
 	
 	public Quiz_Interface(){
-		import_imgs();
 		init();
 		initAdd();
 		def_eventos();
 	}
 
-	public void import_imgs() {
-		//img
-			imgBG = new ImageIcon("C:\\Images_croniquiz\\BG.png");
-			imgLogo = new ImageIcon("C:\\Images_croniquiz\\Logo.png");
-			imgBt = new ImageIcon("C:\\Images_croniquiz\\Button.png");
-			imgPontos = new ImageIcon("C:\\Images_croniquiz\\Pontos.png");
-			imgRodada = new ImageIcon("C:\\Images_croniquiz\\Rodada.png");
-			//imgOp = new ImageIcon("C:\\Images_croniquiz\\Options.png");
-			imgInicial = new ImageIcon("C:\\Images_croniquiz\\CroniquizInicial.png");
-			imgFinal = new ImageIcon("C:\\Images_croniquiz\\CroniquizFinal.png");
-			//Questions
-			imgQuest = new ImageIcon("C:\\Images_croniquiz\\Question.png");
-			imgQ1 = new ImageIcon("C:\\Images_croniquiz\\Quest1.png");
-			imgQ2 = new ImageIcon("C:\\Images_croniquiz\\Quest2.png");
-			imgQ3 = new ImageIcon("C:\\Images_croniquiz\\Quest3.png");
-			imgQ4 = new ImageIcon("C:\\Images_croniquiz\\Quest4.png");
-			imgQ5 = new ImageIcon("C:\\Images_croniquiz\\Quest5.png");
-	}	
 	public void init() {
 		//lb
-		lbBG = new JLabel(imgBG);
-		lbLogo = new JLabel(imgLogo);
-		lbPontos = new JLabel(imgPontos);
-		lbRodadas = new JLabel(imgRodada);
-		lbBt = new JLabel(imgBt);
-		lbOp = new JLabel(imgOp);
-		lbInicial = new JLabel(imgInicial);
-		lbFinal = new JLabel(imgFinal);
+		lbBG = new JLabel(new ImageIcon(getClass().getResource("BG.png")));
+		lbLogo = new JLabel(new ImageIcon(getClass().getResource("Logo.png")));
+		lbPontos = new JLabel(new ImageIcon(getClass().getResource("Pontos.png")));
+		lbRodadas = new JLabel(new ImageIcon(getClass().getResource("Rodada.png")));
+		lbBt = new JLabel(new ImageIcon(getClass().getResource("Button.png")));
+		lbOp = new JLabel("");
+		lbInicial = new JLabel(new ImageIcon(getClass().getResource("CroniquizInicial.png")));
+		lbFinal = new JLabel(new ImageIcon(getClass().getResource("CroniquizFinal.png")));
 		lbpontos = new JLabel();
 		lbrodada = new JLabel();
 		//Questions
-		lbQuest = new JLabel(imgQuest);
-		lbQ1 = new JLabel(imgQ1);
-		lbQ2 = new JLabel(imgQ2);
-		lbQ3 = new JLabel(imgQ3);
-		lbQ4 = new JLabel(imgQ4);
-		lbQ5 = new JLabel(imgQ5);
+		lbQuest = new JLabel(new ImageIcon(getClass().getResource("Question.png")));
+		lbQ1 = new JLabel(new ImageIcon(getClass().getResource("Quest1.png")));
+		lbQ2 = new JLabel(new ImageIcon(getClass().getResource("Quest2.png")));
+		lbQ3 = new JLabel(new ImageIcon(getClass().getResource("Quest3.png")));
+		lbQ4 = new JLabel(new ImageIcon(getClass().getResource("Quest4.png")));
+		lbQ5 = new JLabel(new ImageIcon(getClass().getResource("Quest5.png")));
 		//bt
 		bt1 = new JButton();
 		
